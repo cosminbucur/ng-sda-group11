@@ -1,0 +1,40 @@
+<h2>Built in directives</h2>
+
+<h2>Iterate</h2>
+<!-- iterate using NgFor -->
+<ul *ngFor="let person of people">
+    <li>
+        {{ person.name }} - {{ person.age }}
+    </li>
+</ul>
+
+<h2>Iterate using index</h2>
+<!-- iterate using NgFor with index -->
+<ul *ngFor="let person of people; let i = index">
+    <li>
+        {{ i + 1 }} {{ person.name }} - {{ person.age }}
+    </li>
+</ul>
+
+<h2>People under 30</h2>
+<!-- NgIf -->
+<ul *ngFor="let person of people">
+    <li *ngIf="person.age < 30">
+        {{ person.name }} - {{ person.age }}
+    </li>
+</ul>
+
+<h2>NgSwitch</h2>
+<ul *ngFor="let person of people" [ngSwitch]="person.country">
+    <li *ngSwitchCase="'UK'">{{ person.name }} {{ person.country }}</li>
+    <li *ngSwitchCase="'USA'">{{ person.name }} {{ person.country }}</li>
+    <li *ngSwitchCase="'HK'">{{ person.name }} {{ person.country }}</li>
+    <li *ngSwitchDefault>{{ person.name }} {{ person.country }}</li>
+</ul>
+
+<h2>NgStyle</h2>
+<ul *ngFor="let person of peopleWithoutColor">
+    <li [style.color]=getColor(person.country)>
+        {{ person.name }} - {{ person.country }}
+    </li>
+</ul>

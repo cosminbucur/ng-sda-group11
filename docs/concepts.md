@@ -281,7 +281,7 @@ __objective__: learn to create custom pipes
 
 2. use pipe
 
-  > cd src/app/shared/pipes
+  > cd src/app/features/pipes
   >
   > `ng g c custom-pipes`
 
@@ -494,7 +494,7 @@ __objective__: learn to add a css framework to the project
   >
   > `ng g m material`
 
-  > in src/app/shared/*material.model.ts*
+  > in src/app/shared/*material.module.ts*
   > add modules from
   <https://material.angular.io/components/categories>
 
