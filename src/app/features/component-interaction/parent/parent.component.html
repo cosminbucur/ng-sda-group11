@@ -1,0 +1,12 @@
+<div class="parent">
+
+    <h2>Parent</h2>
+
+    <p>parent message: {{ parentMessage }}</p>
+    <p>child replied: {{ childReply }}</p>
+    <app-child
+        [childInput]="parentMessage"
+        (childOutputEvent)="parentCatchEvent($event)">
+    </app-child>
+
+</div>

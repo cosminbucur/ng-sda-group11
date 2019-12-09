@@ -546,7 +546,11 @@ __objective__: learn material design concepts
 __objective__: putting it all together
 
   > cd src/app/features
+  >
   > `ng g c crud`
+  >
   > cd src/app/features
+  >
   > `ng g c list-user`
+  >
   > `ng g c add-user`

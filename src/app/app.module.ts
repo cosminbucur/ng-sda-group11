@@ -10,7 +10,10 @@ import { CustomPipesComponent } from './features/custom-pipes/custom-pipes.compo
 import { ZeroPaddingPipe } from './shared/pipes/zero-padding.pipe';
 import { TemplateDrivenComponent } from './features/forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './features/forms/model-driven/model-driven.component';
-  
+import { ComponentInteractionComponent } from './features/component-interaction/component-interaction.component';
+import { ParentComponent } from './features/component-interaction/parent/parent.component';
+import { ChildComponent } from './features/component-interaction/parent/child/child.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +24,12 @@ import { ModelDrivenComponent } from './features/forms/model-driven/model-driven
     CustomPipesComponent,
     TemplateDrivenComponent,
     ModelDrivenComponent,
+    ComponentInteractionComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
-  CoreModule,
+    CoreModule,
     SharedModule
   ],
   providers: [],

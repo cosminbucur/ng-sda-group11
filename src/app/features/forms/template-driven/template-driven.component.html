@@ -1,1 +1,55 @@
-<p>template-driven works!</p>
+<mat-card>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+
+    <!-- first name -->
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="First name"
+            type="text"
+            name="firstName"
+            ngModel>
+    </mat-form-field>  
+
+    <!-- email -->
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="Email"
+            type="email"
+            name="email"
+            [(ngModel)]="model.email"
+            required
+            pattern="[^ @]*@[^ @]*">
+        <!-- <div [ngClass]="{ 'invalid-feedback: f.form.controls.email?.invalid' }">
+            Wrong email format
+        </div> -->
+    </mat-form-field>  
+
+    <!-- password -->
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="Password"
+            type="password"
+            name="password"
+            [(ngModel)]="model.password"
+            required>
+    </mat-form-field>  
+    
+
+    <button mat-flat-button
+        color="primary"
+        type="submit">
+        Submit
+    </button>
+</form>
+
+</mat-card>
+
+<mat-card>
+    <pre>{{ f.value | json }}</pre>
+    <pre>email invalid: {{ f.form.controls.email?.invalid | json}}</pre>
+    <pre>email dirty: {{ f.form.controls.email?.dirty | json}}</pre>
+</mat-card>

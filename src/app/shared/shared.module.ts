@@ -7,7 +7,6 @@ import { MaterialModule } from './material/material.module';
 @NgModule({
   imports: [
     // angular modules
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
 

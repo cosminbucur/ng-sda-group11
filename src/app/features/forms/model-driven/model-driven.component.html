@@ -1,1 +1,65 @@
-<p>model-driven works!</p>
+<mat-card>
+
+    <form novalidate
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmit()">
+
+        <!-- first name -->
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="First name"
+                type="text"
+                formControlName="firstName">
+        </mat-form-field>  
+
+        <mat-form-field>
+                <input
+                    matInput
+                    placeholder="Last name"
+                    type="text"
+                    formControlName="lastName">
+            </mat-form-field> 
+
+        <!-- email -->
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="Email"
+                type="email"
+                formControlName="email">
+        </mat-form-field>  
+
+        <!-- password -->
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="Password"
+                type="password"
+                formControlName="password">
+        </mat-form-field>  
+
+        <mat-form-field>
+            <mat-label>Language</mat-label>
+            <mat-select formControlName="language">
+              <mat-option *ngFor="let language of languages" [value]="language.value">
+                {{language.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button
+            color="primary"
+            type="submit">
+            Submit
+        </button>
+
+        <button mat-raised-button
+            color="primary"
+            (click)="onCancel($event)">
+            Cancel
+        </button>
+
+        <pre>{{ registrationForm.value | json }}</pre>
+    </form>
+</mat-card>
